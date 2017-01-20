@@ -1,0 +1,4 @@
+target 'BHXWLZS' do
+  pod ‘Masonry’
+  pod ‘MagicalRecord’ 
+end

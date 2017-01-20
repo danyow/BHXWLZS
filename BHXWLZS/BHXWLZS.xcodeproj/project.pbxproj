@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		668E7E0E121736384E96A1C6 /* libPods-BHXWLZS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */; };
 		F40DC27C1E310A5500DBCE74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC27B1E310A5500DBCE74 /* main.m */; };
 		F40DC27F1E310A5500DBCE74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC27E1E310A5500DBCE74 /* AppDelegate.m */; };
 		F40DC2821E310A5500DBCE74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC2811E310A5500DBCE74 /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BHXWLZS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B884E1B0EC5F75736524665 /* Pods-BHXWLZS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.release.xcconfig"; sourceTree = "<group>"; };
+		A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.debug.xcconfig"; sourceTree = "<group>"; };
 		F40DC2771E310A5500DBCE74 /* BHXWLZS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHXWLZS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40DC27B1E310A5500DBCE74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F40DC27D1E310A5500DBCE74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668E7E0E121736384E96A1C6 /* libPods-BHXWLZS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A03134F287A00B70331DD439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5681690DD2FC9B160CE4BF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */,
+				6B884E1B0EC5F75736524665 /* Pods-BHXWLZS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F40DC26E1E310A5400DBCE74 = {
 			isa = PBXGroup;
 			children = (
 				F40DC2791E310A5500DBCE74 /* BHXWLZS */,
 				F40DC2781E310A5500DBCE74 /* Products */,
+				D5681690DD2FC9B160CE4BF9 /* Pods */,
+				A03134F287A00B70331DD439 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F40DC28E1E310A5500DBCE74 /* Build configuration list for PBXNativeTarget "BHXWLZS" */;
 			buildPhases = (
+				A5DE41925F5264EF5819BF19 /* [CP] Check Pods Manifest.lock */,
 				F40DC2731E310A5400DBCE74 /* Sources */,
 				F40DC2741E310A5400DBCE74 /* Frameworks */,
 				F40DC2751E310A5400DBCE74 /* Resources */,
+				1E7C15F766BE8A27D0CB1E49 /* [CP] Embed Pods Frameworks */,
+				FFB075A13D4BD11DF1801EBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E7C15F766BE8A27D0CB1E49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5DE41925F5264EF5819BF19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FFB075A13D4BD11DF1801EBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F40DC2731E310A5400DBCE74 /* Sources */ = {
@@ -268,6 +343,7 @@
 		};
 		F40DC28F1E310A5500DBCE74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunHong Zhu (72GJ4BTB4F)";
@@ -283,6 +359,7 @@
 		};
 		F40DC2901E310A5500DBCE74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B884E1B0EC5F75736524665 /* Pods-BHXWLZS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunHong Zhu (72GJ4BTB4F)";
