@@ -1,17 +1,20 @@
 PODS:
+  - IQKeyboardManager (4.0.8)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - Masonry (1.0.2)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - MagicalRecord
   - Masonry
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: 198871eebadfae7cad65b7bfc5a6fdb676ba4fdf
+PODFILE CHECKSUM: 178fdb82d9dc2a0551efcff6bd498f26cb377a50
 
 COCOAPODS: 1.1.1

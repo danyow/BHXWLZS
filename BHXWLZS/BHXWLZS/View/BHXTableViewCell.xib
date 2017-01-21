@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BHXTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-h1-ogx">
+                        <rect key="frame" x="15" y="12.5" width="42.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPl-GO-dLX">
+                        <rect key="frame" x="80" y="0.0" width="240" height="43.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="cE7-WK-hkn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kPl-GO-dLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Rq-AT-F4O"/>
+                    <constraint firstItem="gk1-h1-ogx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DAz-Hb-zO2"/>
+                    <constraint firstAttribute="bottom" secondItem="kPl-GO-dLX" secondAttribute="bottom" id="Q2a-te-94G"/>
+                    <constraint firstAttribute="trailing" secondItem="kPl-GO-dLX" secondAttribute="trailing" id="ZeV-PZ-Kux"/>
+                    <constraint firstItem="gk1-h1-ogx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="pf4-aT-W9P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="inputHostView" destination="kPl-GO-dLX" id="7bQ-Yc-whF"/>
+                <outlet property="nameLabel" destination="gk1-h1-ogx" id="m94-cH-a6H"/>
+            </connections>
+            <point key="canvasLocation" x="-396" y="-133"/>
+        </tableViewCell>
+    </objects>
+</document>

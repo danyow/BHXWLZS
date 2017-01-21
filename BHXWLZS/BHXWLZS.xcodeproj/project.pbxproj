@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		668E7E0E121736384E96A1C6 /* libPods-BHXWLZS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */; };
-		F40DC27C1E310A5500DBCE74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC27B1E310A5500DBCE74 /* main.m */; };
-		F40DC27F1E310A5500DBCE74 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC27E1E310A5500DBCE74 /* AppDelegate.m */; };
-		F40DC2821E310A5500DBCE74 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40DC2811E310A5500DBCE74 /* ViewController.m */; };
 		F40DC2851E310A5500DBCE74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2831E310A5500DBCE74 /* Main.storyboard */; };
 		F40DC2871E310A5500DBCE74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2861E310A5500DBCE74 /* Assets.xcassets */; };
 		F40DC28A1E310A5500DBCE74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */; };
+		F4225DF31E32F31C0066CE18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225DF21E32F31C0066CE18 /* main.m */; };
+		F4225E071E32F3400066CE18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225DFE1E32F3400066CE18 /* ViewController.m */; };
+		F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E021E32F3400066CE18 /* AppDelegate.m */; };
+		F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E0C1E32F3890066CE18 /* BHXTableViewCell.m */; };
+		F4225E0F1E32F3890066CE18 /* BHXTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E0D1E32F3890066CE18 /* BHXTableViewCell.xib */; };
+		F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */; };
+		F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */; };
+		F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,15 +26,22 @@
 		6B884E1B0EC5F75736524665 /* Pods-BHXWLZS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.release.xcconfig"; sourceTree = "<group>"; };
 		A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.debug.xcconfig"; sourceTree = "<group>"; };
 		F40DC2771E310A5500DBCE74 /* BHXWLZS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHXWLZS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F40DC27B1E310A5500DBCE74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F40DC27D1E310A5500DBCE74 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F40DC27E1E310A5500DBCE74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F40DC2801E310A5500DBCE74 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F40DC2811E310A5500DBCE74 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F40DC2841E310A5500DBCE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F40DC2861E310A5500DBCE74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F40DC2891E310A5500DBCE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40DC28B1E310A5500DBCE74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4225DF21E32F31C0066CE18 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4225DFD1E32F3400066CE18 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F4225DFE1E32F3400066CE18 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F4225E011E32F3400066CE18 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F4225E021E32F3400066CE18 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4225E0B1E32F3890066CE18 /* BHXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXTableViewCell.h; sourceTree = "<group>"; };
+		F4225E0C1E32F3890066CE18 /* BHXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXTableViewCell.m; sourceTree = "<group>"; };
+		F4225E0D1E32F3890066CE18 /* BHXTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXTableViewCell.xib; sourceTree = "<group>"; };
+		F4225E101E32F3A00066CE18 /* BHXInputStepperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXInputStepperView.h; sourceTree = "<group>"; };
+		F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXInputStepperView.m; sourceTree = "<group>"; };
+		F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXInputStepperView.xib; sourceTree = "<group>"; };
+		F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,14 +94,10 @@
 		F40DC2791E310A5500DBCE74 /* BHXWLZS */ = {
 			isa = PBXGroup;
 			children = (
-				F40DC27D1E310A5500DBCE74 /* AppDelegate.h */,
-				F40DC27E1E310A5500DBCE74 /* AppDelegate.m */,
-				F40DC2801E310A5500DBCE74 /* ViewController.h */,
-				F40DC2811E310A5500DBCE74 /* ViewController.m */,
-				F40DC2831E310A5500DBCE74 /* Main.storyboard */,
-				F40DC2861E310A5500DBCE74 /* Assets.xcassets */,
-				F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */,
-				F40DC28B1E310A5500DBCE74 /* Info.plist */,
+				F4225DFC1E32F3400066CE18 /* Controller */,
+				F4225DFF1E32F3400066CE18 /* Model */,
+				F4225E001E32F3400066CE18 /* Other */,
+				F4225E031E32F3400066CE18 /* View */,
 				F40DC27A1E310A5500DBCE74 /* Supporting Files */,
 			);
 			path = BHXWLZS;
@@ -98,9 +106,52 @@
 		F40DC27A1E310A5500DBCE74 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F40DC27B1E310A5500DBCE74 /* main.m */,
+				F40DC2861E310A5500DBCE74 /* Assets.xcassets */,
+				F40DC28B1E310A5500DBCE74 /* Info.plist */,
+				F4225DF21E32F31C0066CE18 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4225DFC1E32F3400066CE18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4225DFD1E32F3400066CE18 /* ViewController.h */,
+				F4225DFE1E32F3400066CE18 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4225DFF1E32F3400066CE18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4225E001E32F3400066CE18 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F4225E011E32F3400066CE18 /* AppDelegate.h */,
+				F4225E021E32F3400066CE18 /* AppDelegate.m */,
+				F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */,
+				F40DC2831E310A5500DBCE74 /* Main.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F4225E031E32F3400066CE18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4225E0B1E32F3890066CE18 /* BHXTableViewCell.h */,
+				F4225E0C1E32F3890066CE18 /* BHXTableViewCell.m */,
+				F4225E0D1E32F3890066CE18 /* BHXTableViewCell.xib */,
+				F4225E101E32F3A00066CE18 /* BHXInputStepperView.h */,
+				F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */,
+				F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +183,7 @@
 		F40DC26F1E310A5400DBCE74 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BHX;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Danyow.Ed;
 				TargetAttributes = {
@@ -164,8 +216,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */,
 				F40DC28A1E310A5500DBCE74 /* LaunchScreen.storyboard in Resources */,
 				F40DC2871E310A5500DBCE74 /* Assets.xcassets in Resources */,
+				F4225E0F1E32F3890066CE18 /* BHXTableViewCell.xib in Resources */,
 				F40DC2851E310A5500DBCE74 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,9 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F40DC2821E310A5500DBCE74 /* ViewController.m in Sources */,
-				F40DC27F1E310A5500DBCE74 /* AppDelegate.m in Sources */,
-				F40DC27C1E310A5500DBCE74 /* main.m in Sources */,
+				F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */,
+				F4225E071E32F3400066CE18 /* ViewController.m in Sources */,
+				F4225DF31E32F31C0066CE18 /* main.m in Sources */,
+				F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */,
+				F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */,
+				F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +297,7 @@
 				F40DC2841E310A5500DBCE74 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */ = {
@@ -248,6 +306,7 @@
 				F40DC2891E310A5500DBCE74 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -392,8 +451,22 @@
 				F40DC2901E310A5500DBCE74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */,
+			);
+			currentVersion = F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */;
+			path = GoodsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F40DC26F1E310A5400DBCE74 /* Project object */;
 }

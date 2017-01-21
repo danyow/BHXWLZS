@@ -1,4 +1,5 @@
 target 'BHXWLZS' do
   pod ‘Masonry’
-  pod ‘MagicalRecord’ 
+  pod ‘MagicalRecord’
+  pod ‘IQKeyboardManager’
 end
