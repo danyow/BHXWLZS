@@ -3,6 +3,7 @@
     <entity name="Goods" representedClassName="Goods" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="prices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GoodsPrice" inverseName="whichGoods" inverseEntity="GoodsPrice" syncable="YES"/>
     </entity>
@@ -12,7 +13,7 @@
         <relationship name="whichGoods" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goods" inverseName="prices" inverseEntity="Goods" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goods" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Goods" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="GoodsPrice" positionX="-54" positionY="27" width="128" height="90"/>
     </elements>
 </model>

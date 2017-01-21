@@ -10,4 +10,7 @@
 
 @interface BHXInputStepperView : UIView
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic, copy) void (^textFieldChangeBlock)(NSInteger number, BOOL quickChange);
+
 @end

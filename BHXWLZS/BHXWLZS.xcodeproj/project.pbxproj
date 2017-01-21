@@ -19,6 +19,9 @@
 		F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */; };
 		F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */; };
 		F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */; };
+		F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D641E330B1A0090F353 /* BHXGoodsManager.m */; };
+		F4E97D6B1E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D681E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m */; };
+		F4E97D6C1E332D8E0090F353 /* Goods+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D6A1E332D8E0090F353 /* Goods+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,13 @@
 		F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXInputStepperView.m; sourceTree = "<group>"; };
 		F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXInputStepperView.xib; sourceTree = "<group>"; };
 		F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodsModel.xcdatamodel; sourceTree = "<group>"; };
+		F4E97D631E330B1A0090F353 /* BHXGoodsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXGoodsManager.h; sourceTree = "<group>"; };
+		F4E97D641E330B1A0090F353 /* BHXGoodsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXGoodsManager.m; sourceTree = "<group>"; };
+		F4E97D661E332BDA0090F353 /* GoodsModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GoodsModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		F4E97D671E332D8D0090F353 /* GoodsPrice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GoodsPrice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F4E97D681E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GoodsPrice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F4E97D691E332D8E0090F353 /* Goods+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Goods+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F4E97D6A1E332D8E0090F353 /* Goods+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Goods+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +135,13 @@
 		F4225DFF1E32F3400066CE18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4E97D671E332D8D0090F353 /* GoodsPrice+CoreDataProperties.h */,
+				F4E97D681E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m */,
+				F4E97D691E332D8E0090F353 /* Goods+CoreDataProperties.h */,
+				F4E97D6A1E332D8E0090F353 /* Goods+CoreDataProperties.m */,
 				F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */,
+				F4E97D631E330B1A0090F353 /* BHXGoodsManager.h */,
+				F4E97D641E330B1A0090F353 /* BHXGoodsManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +205,7 @@
 				TargetAttributes = {
 					F40DC2761E310A5400DBCE74 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 72GJ4BTB4F;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -283,8 +300,11 @@
 				F4225E071E32F3400066CE18 /* ViewController.m in Sources */,
 				F4225DF31E32F31C0066CE18 /* main.m in Sources */,
 				F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */,
+				F4E97D6B1E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m in Sources */,
+				F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */,
 				F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */,
 				F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */,
+				F4E97D6C1E332D8E0090F353 /* Goods+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,14 +425,14 @@
 			baseConfigurationReference = A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: JunHong Zhu (72GJ4BTB4F)";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JunHong Zhu (285AA3RCX7)";
+				DEVELOPMENT_TEAM = 72GJ4BTB4F;
 				INFOPLIST_FILE = BHXWLZS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Danyow.Ed.BHXWLZS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ba35e0c1-3d86-49b0-b1ed-03da7e052545";
-				PROVISIONING_PROFILE_SPECIFIER = BHXWLZSAdHos;
+				PROVISIONING_PROFILE = "1c7380e5-a059-4101-a270-2d5a59d58994";
+				PROVISIONING_PROFILE_SPECIFIER = BHXWLZSDevelopment;
 			};
 			name = Debug;
 		};
@@ -422,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunHong Zhu (72GJ4BTB4F)";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 72GJ4BTB4F;
 				INFOPLIST_FILE = BHXWLZS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Danyow.Ed.BHXWLZS;
@@ -459,9 +479,10 @@
 		F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F4E97D661E332BDA0090F353 /* GoodsModel 2.xcdatamodel */,
 				F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */,
 			);
-			currentVersion = F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */;
+			currentVersion = F4E97D661E332BDA0090F353 /* GoodsModel 2.xcdatamodel */;
 			path = GoodsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
