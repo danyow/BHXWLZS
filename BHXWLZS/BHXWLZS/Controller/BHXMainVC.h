@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BHXMainVC.h
 //  BHXWLZS
 //
-//  Created by Danyow.Ed on 2017/1/19.
+//  Created by Danyow.Ed on 2017/1/21.
 //  Copyright © 2017年 Danyow.Ed. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BHXMainVC : UIViewController
 
 @end
-

@@ -42,6 +42,13 @@
     }];
 }
 
+#pragma mark -  life cycle
+
+- (void)dealloc
+{
+    [self.textField removeObserver:self forKeyPath:@"text"];
+}
+
 #pragma mark -  private method
 
 - (void)prepareForConfig

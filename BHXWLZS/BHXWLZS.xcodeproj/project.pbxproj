@@ -12,13 +12,17 @@
 		F40DC2871E310A5500DBCE74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2861E310A5500DBCE74 /* Assets.xcassets */; };
 		F40DC28A1E310A5500DBCE74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */; };
 		F4225DF31E32F31C0066CE18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225DF21E32F31C0066CE18 /* main.m */; };
-		F4225E071E32F3400066CE18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225DFE1E32F3400066CE18 /* ViewController.m */; };
 		F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E021E32F3400066CE18 /* AppDelegate.m */; };
 		F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E0C1E32F3890066CE18 /* BHXTableViewCell.m */; };
 		F4225E0F1E32F3890066CE18 /* BHXTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E0D1E32F3890066CE18 /* BHXTableViewCell.xib */; };
 		F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */; };
 		F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */; };
 		F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */; };
+		F46037921E339E78006C4C1A /* BHXHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */; };
+		F46037961E339E8C006C4C1A /* BHXHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */; };
+		F460379E1E33A1F2006C4C1A /* BHXLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */; };
+		F46037A01E33A217006C4C1A /* BHXLocationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F460379F1E33A217006C4C1A /* BHXLocationVC.storyboard */; };
+		F46037A31E33A283006C4C1A /* BHXMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F46037A21E33A283006C4C1A /* BHXMainVC.m */; };
 		F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D641E330B1A0090F353 /* BHXGoodsManager.m */; };
 		F4E97D6B1E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D681E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m */; };
 		F4E97D6C1E332D8E0090F353 /* Goods+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E97D6A1E332D8E0090F353 /* Goods+CoreDataProperties.m */; };
@@ -34,8 +38,6 @@
 		F40DC2891E310A5500DBCE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40DC28B1E310A5500DBCE74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4225DF21E32F31C0066CE18 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F4225DFD1E32F3400066CE18 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F4225DFE1E32F3400066CE18 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F4225E011E32F3400066CE18 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4225E021E32F3400066CE18 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4225E0B1E32F3890066CE18 /* BHXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXTableViewCell.h; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 		F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXInputStepperView.m; sourceTree = "<group>"; };
 		F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXInputStepperView.xib; sourceTree = "<group>"; };
 		F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodsModel.xcdatamodel; sourceTree = "<group>"; };
+		F46037901E339E78006C4C1A /* BHXHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXHeaderFooterView.h; sourceTree = "<group>"; };
+		F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXHeaderFooterView.m; sourceTree = "<group>"; };
+		F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXHeaderFooterView.xib; sourceTree = "<group>"; };
+		F460379C1E33A1F2006C4C1A /* BHXLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXLocationVC.h; sourceTree = "<group>"; };
+		F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXLocationVC.m; sourceTree = "<group>"; };
+		F460379F1E33A217006C4C1A /* BHXLocationVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BHXLocationVC.storyboard; sourceTree = "<group>"; };
+		F46037A11E33A283006C4C1A /* BHXMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXMainVC.h; sourceTree = "<group>"; };
+		F46037A21E33A283006C4C1A /* BHXMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXMainVC.m; sourceTree = "<group>"; };
 		F4E97D631E330B1A0090F353 /* BHXGoodsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXGoodsManager.h; sourceTree = "<group>"; };
 		F4E97D641E330B1A0090F353 /* BHXGoodsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXGoodsManager.m; sourceTree = "<group>"; };
 		F4E97D661E332BDA0090F353 /* GoodsModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GoodsModel 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -126,8 +136,11 @@
 		F4225DFC1E32F3400066CE18 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F4225DFD1E32F3400066CE18 /* ViewController.h */,
-				F4225DFE1E32F3400066CE18 /* ViewController.m */,
+				F46037A11E33A283006C4C1A /* BHXMainVC.h */,
+				F46037A21E33A283006C4C1A /* BHXMainVC.m */,
+				F460379C1E33A1F2006C4C1A /* BHXLocationVC.h */,
+				F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */,
+				F460379F1E33A217006C4C1A /* BHXLocationVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +173,9 @@
 		F4225E031E32F3400066CE18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F46037901E339E78006C4C1A /* BHXHeaderFooterView.h */,
+				F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */,
+				F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */,
 				F4225E0B1E32F3890066CE18 /* BHXTableViewCell.h */,
 				F4225E0C1E32F3890066CE18 /* BHXTableViewCell.m */,
 				F4225E0D1E32F3890066CE18 /* BHXTableViewCell.xib */,
@@ -236,8 +252,10 @@
 				F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */,
 				F40DC28A1E310A5500DBCE74 /* LaunchScreen.storyboard in Resources */,
 				F40DC2871E310A5500DBCE74 /* Assets.xcassets in Resources */,
+				F46037A01E33A217006C4C1A /* BHXLocationVC.storyboard in Resources */,
 				F4225E0F1E32F3890066CE18 /* BHXTableViewCell.xib in Resources */,
 				F40DC2851E310A5500DBCE74 /* Main.storyboard in Resources */,
+				F46037961E339E8C006C4C1A /* BHXHeaderFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +315,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */,
-				F4225E071E32F3400066CE18 /* ViewController.m in Sources */,
 				F4225DF31E32F31C0066CE18 /* main.m in Sources */,
 				F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */,
+				F460379E1E33A1F2006C4C1A /* BHXLocationVC.m in Sources */,
 				F4E97D6B1E332D8E0090F353 /* GoodsPrice+CoreDataProperties.m in Sources */,
+				F46037A31E33A283006C4C1A /* BHXMainVC.m in Sources */,
 				F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */,
 				F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */,
 				F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */,
 				F4E97D6C1E332D8E0090F353 /* Goods+CoreDataProperties.m in Sources */,
+				F46037921E339E78006C4C1A /* BHXHeaderFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
