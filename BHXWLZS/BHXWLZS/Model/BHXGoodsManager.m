@@ -7,7 +7,6 @@
 //
 
 #import "BHXGoodsManager.h"
-#import <MagicalRecord/MagicalRecord.h>
 
 NSString *BHXGoodsAPartnerPrice = @"高级合伙人";
 NSString *BHXGoodsBPartnerPrice = @"中级合伙人";
@@ -46,25 +45,19 @@ NSString *BHXGoodsRetailPrice   = @"零售";
                        weight:235 row:4 A:@"16.0" B:@"18.0" C:@"21.0" D:@"25.0"];
     [self createGoodsWithName:@"清洗黑加仑"
                        weight:280 row:5 A:@"16.0" B:@"18.0" C:@"21.0" D:@"25.0"];
-
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        if (contextDidSave) {
-            NSLog(@"You successfully saved your context.");
-        } else if (error) {
-            NSLog(@"Error saving context: %@", error.description);
-        }
-    }];
+    BHXSaveModel;
 }
 
-- (void)createGoodsWithName:(NSString *)name weight:(double)weight row:(NSInteger)row A:(NSString *)A B:(NSString *)B C:(NSString *)C D:(NSString *)D
+- (Goods *)createGoodsWithName:(NSString *)name weight:(double)weight row:(NSInteger)row A:(NSString *)A B:(NSString *)B C:(NSString *)C D:(NSString *)D
 {
-    [self createGoodsWithName:name weight:weight row:row pricesDict:@{self.priceInfos[0] : A,
-                                                                      self.priceInfos[1] : B,
-                                                                      self.priceInfos[2] : C,
-                                                                      self.priceInfos[3] : D,}];
+    return [self createGoodsWithName:name weight:weight
+                                 row:row pricesDict:@{self.priceInfos[0] : A,
+                                                      self.priceInfos[1] : B,
+                                                      self.priceInfos[2] : C,
+                                                      self.priceInfos[3] : D,}];
 }
 
-- (void)createGoodsWithName:(NSString *)name weight:(double)weight row:(NSInteger)row pricesDict:(NSDictionary *)dict
+- (Goods *)createGoodsWithName:(NSString *)name weight:(double)weight row:(NSInteger)row pricesDict:(NSDictionary *)dict
 {
     Goods *goods = [Goods MR_createEntity];
     goods.name   = name;
@@ -79,6 +72,7 @@ NSString *BHXGoodsRetailPrice   = @"零售";
         [set addObject:price];
     }];
     goods.prices = set;
+    return goods;
 }
 
 #pragma mark -  lazy load
@@ -86,11 +80,15 @@ NSString *BHXGoodsRetailPrice   = @"零售";
 - (NSArray<Goods *> *)allGoods
 {
     if (!_allGoods) {
-        _allGoods = [Goods MR_findAll];
-        if (_allGoods.count == 0) {
+        
+        NSString *firstKey = @"firstUsedAppToCreatDefaultGoods";
+        BOOL used          = [[NSUserDefaults standardUserDefaults] boolForKey:firstKey];
+        if(!used){
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:firstKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             [self createGoods];
-            _allGoods = [Goods MR_findAll];
         }
+        _allGoods = [Goods MR_findAll];
         _allGoods = [_allGoods sortedArrayUsingComparator:^NSComparisonResult(Goods *obj1, Goods *obj2) {
             return obj1.row > obj2.row;
         }];

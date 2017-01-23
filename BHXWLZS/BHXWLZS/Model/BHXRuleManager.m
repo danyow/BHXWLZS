@@ -7,7 +7,6 @@
 //
 
 #import "BHXRuleManager.h"
-#import <MagicalRecord/MagicalRecord.h>
 
 @implementation BHXRuleManager
 
@@ -45,13 +44,7 @@
     [self createRuleWithName:@"六" gradeW:1000 firstP:@"17" addP:@"17" row:5
                        citys:@[@"新疆", @"西藏",]
                       rankPs:@{@"1000" : @"17",}];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError * _Nullable error) {
-        if (contextDidSave) {
-            NSLog(@"You successfully saved your context.");
-        } else if (error) {
-            NSLog(@"Error saving context: %@", error.description);
-        }
-    }];
+    BHXSaveModel;
 }
 
 - (void)createRuleWithName:(NSString *)name
@@ -109,9 +102,10 @@
     return _allRule;
 }
 
-- (City *)selectedCity
+
+- (City *)firstCity
 {
-    if (!_selectedCity) {
+    if (!_firstCity) {
         __block City *city = nil;
         [self.allRule.firstObject.citys enumerateObjectsUsingBlock:^(City *obj, BOOL *stop) {
             if (obj.row == 0) {
@@ -120,9 +114,9 @@
                 return ;
             }
         }];
-        _selectedCity = city;
+        _firstCity = city;
     }
-    return _selectedCity;
+    return _firstCity;
 }
 
 @end

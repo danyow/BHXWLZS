@@ -25,4 +25,6 @@ UIKIT_EXTERN NSString *BHXGoodsRetailPrice;
 
 + (instancetype)shareManager;
 
+- (Goods *)createGoodsWithName:(NSString *)name weight:(double)weight row:(NSInteger)row A:(NSString *)A B:(NSString *)B C:(NSString *)C D:(NSString *)D;
+
 @end

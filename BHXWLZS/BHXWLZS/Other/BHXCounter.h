@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "UserData+CoreDataProperties.h"
+
 @interface BHXCounter : NSObject
 
 @property (nonatomic, strong) NSNumber *actualPrice;
@@ -17,6 +19,8 @@
 @property (nonatomic, assign) NSInteger weight;
 @property (nonatomic, assign) NSInteger amount;
 @property (nonatomic, assign) NSInteger exempt;
+
+@property (nonatomic, strong) UserData *userData;
 
 @property (nonatomic, copy) void (^didCounter)();
 

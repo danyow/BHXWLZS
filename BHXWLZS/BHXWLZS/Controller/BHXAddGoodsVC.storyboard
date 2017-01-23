@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EMo-Fo-KIW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add GoodsVC-->
+        <scene sceneID="scu-xc-bhR">
+            <objects>
+                <viewController id="EMo-Fo-KIW" customClass="BHXAddGoodsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="baI-Qm-XOF"/>
+                        <viewControllerLayoutGuide type="bottom" id="vBy-Zn-r5A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a4J-ST-oYa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx7-7m-dHO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-EQ-PKc">
+                                        <rect key="frame" x="15" y="0.0" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DkN-FF-jpX"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="0qB-kB-Kbg"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入重量 单位克" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-oN-yXL">
+                                        <rect key="frame" x="15" y="44" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="OYw-a0-YoT"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="6hE-zg-RBh"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入高级合伙人价格" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-pf-p0x">
+                                        <rect key="frame" x="15" y="88" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="qQJ-rm-prO"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="YpB-Y6-S1d"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入中级合伙人价格" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKl-gs-UFn">
+                                        <rect key="frame" x="15" y="132" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4YK-Tw-DSM"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="e4n-eJ-M3C"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入初级合伙人价格" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-se-ie1">
+                                        <rect key="frame" x="15" y="176" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Qbb-23-TTD"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="Btm-eD-aAt"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入零售价格" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-XC-CbZ">
+                                        <rect key="frame" x="15" y="220" width="360" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="CEL-ed-JFl"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <action selector="textFieldTextChange:" destination="EMo-Fo-KIW" eventType="editingChanged" id="MCk-UP-4po"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WuD-se-ie1" firstAttribute="top" secondItem="sKl-gs-UFn" secondAttribute="bottom" id="1fo-Fl-kih"/>
+                                    <constraint firstItem="Hjd-pf-p0x" firstAttribute="leading" secondItem="dzQ-EQ-PKc" secondAttribute="leading" id="20L-dC-oMb"/>
+                                    <constraint firstAttribute="trailing" secondItem="WuD-se-ie1" secondAttribute="trailing" id="5bV-E8-cF3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hjd-pf-p0x" secondAttribute="trailing" id="6N7-GF-dLK"/>
+                                    <constraint firstAttribute="trailing" secondItem="qZY-XC-CbZ" secondAttribute="trailing" id="B1d-rn-m7G"/>
+                                    <constraint firstAttribute="trailing" secondItem="xSO-oN-yXL" secondAttribute="trailing" id="DiC-Ls-Ycy"/>
+                                    <constraint firstItem="sKl-gs-UFn" firstAttribute="top" secondItem="Hjd-pf-p0x" secondAttribute="bottom" id="Dzo-aK-Gln"/>
+                                    <constraint firstItem="sKl-gs-UFn" firstAttribute="leading" secondItem="dzQ-EQ-PKc" secondAttribute="leading" id="Ew1-iy-vlH"/>
+                                    <constraint firstAttribute="trailing" secondItem="dzQ-EQ-PKc" secondAttribute="trailing" id="RQV-dz-F4U"/>
+                                    <constraint firstItem="Hjd-pf-p0x" firstAttribute="top" secondItem="xSO-oN-yXL" secondAttribute="bottom" id="Wki-dx-Nir"/>
+                                    <constraint firstItem="dzQ-EQ-PKc" firstAttribute="width" secondItem="hx7-7m-dHO" secondAttribute="width" constant="-15" id="bG5-T9-5YF"/>
+                                    <constraint firstItem="qZY-XC-CbZ" firstAttribute="leading" secondItem="dzQ-EQ-PKc" secondAttribute="leading" id="cxA-tn-d7J"/>
+                                    <constraint firstItem="dzQ-EQ-PKc" firstAttribute="leading" secondItem="hx7-7m-dHO" secondAttribute="leading" constant="15" id="dtf-7f-YYF"/>
+                                    <constraint firstAttribute="trailing" secondItem="sKl-gs-UFn" secondAttribute="trailing" id="eAt-5o-62O"/>
+                                    <constraint firstItem="WuD-se-ie1" firstAttribute="leading" secondItem="dzQ-EQ-PKc" secondAttribute="leading" id="i1r-ja-xWQ"/>
+                                    <constraint firstItem="qZY-XC-CbZ" firstAttribute="top" secondItem="WuD-se-ie1" secondAttribute="bottom" id="nZ3-sc-N4P"/>
+                                    <constraint firstItem="xSO-oN-yXL" firstAttribute="top" secondItem="dzQ-EQ-PKc" secondAttribute="bottom" id="qgc-aC-X3z"/>
+                                    <constraint firstItem="xSO-oN-yXL" firstAttribute="leading" secondItem="dzQ-EQ-PKc" secondAttribute="leading" id="vuE-Qi-IR0"/>
+                                    <constraint firstAttribute="bottom" secondItem="qZY-XC-CbZ" secondAttribute="bottom" id="wuO-wl-39O"/>
+                                    <constraint firstItem="dzQ-EQ-PKc" firstAttribute="top" secondItem="hx7-7m-dHO" secondAttribute="top" id="xKL-Ye-FRj"/>
+                                </constraints>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMH-RE-siw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GCv-37-IGj"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem width="34" style="plain" id="f36-Dj-xyF">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zkd-yU-STl">
+                                            <rect key="frame" x="16" y="7" width="34" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <state key="normal" title="取消"/>
+                                            <connections>
+                                                <action selector="dismissButtonDidClick:" destination="EMo-Fo-KIW" eventType="touchUpInside" id="0rH-rz-sjg"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fDJ-30-U7y"/>
+                                    <barButtonItem width="34" style="plain" id="GVw-Dg-lmU">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="un8-jO-mRT">
+                                            <rect key="frame" x="325" y="7" width="34" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <state key="normal" title="保存"/>
+                                            <connections>
+                                                <action selector="saveButtonDidClick:" destination="EMo-Fo-KIW" eventType="touchUpInside" id="cuQ-jk-xdr"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SMH-RE-siw" firstAttribute="top" secondItem="a4J-ST-oYa" secondAttribute="top" constant="20" id="Atm-DK-ZGa"/>
+                            <constraint firstAttribute="trailing" secondItem="SMH-RE-siw" secondAttribute="trailing" id="JGY-yn-Mvy"/>
+                            <constraint firstItem="hx7-7m-dHO" firstAttribute="top" secondItem="SMH-RE-siw" secondAttribute="bottom" id="QFX-It-Sbh"/>
+                            <constraint firstItem="hx7-7m-dHO" firstAttribute="leading" secondItem="a4J-ST-oYa" secondAttribute="leading" id="Qx8-JO-Mxy"/>
+                            <constraint firstItem="vBy-Zn-r5A" firstAttribute="top" secondItem="hx7-7m-dHO" secondAttribute="bottom" id="f1N-WW-lSr"/>
+                            <constraint firstItem="SMH-RE-siw" firstAttribute="leading" secondItem="a4J-ST-oYa" secondAttribute="leading" id="g24-2G-Oob"/>
+                            <constraint firstAttribute="trailing" secondItem="hx7-7m-dHO" secondAttribute="trailing" id="kI0-W2-SPc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aPriceTextField" destination="Hjd-pf-p0x" id="Kvi-zU-UnB"/>
+                        <outlet property="bPriceTextField" destination="sKl-gs-UFn" id="KpH-xS-cTk"/>
+                        <outlet property="cPriceTextField" destination="WuD-se-ie1" id="Cul-SD-y3X"/>
+                        <outlet property="dPriceTextField" destination="qZY-XC-CbZ" id="mEA-rd-uR4"/>
+                        <outlet property="nameTextField" destination="dzQ-EQ-PKc" id="QdL-5U-FiG"/>
+                        <outlet property="saveButton" destination="un8-jO-mRT" id="oQ7-rn-aSA"/>
+                        <outlet property="scrollView" destination="hx7-7m-dHO" id="CSO-L4-9g8"/>
+                        <outlet property="toolBar" destination="SMH-RE-siw" id="37O-Dl-vgK"/>
+                        <outlet property="weightTextField" destination="xSO-oN-yXL" id="iwt-xd-9in"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8J-Id-CZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1362" y="-408"/>
+        </scene>
+    </scenes>
+</document>

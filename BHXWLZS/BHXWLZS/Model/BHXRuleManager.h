@@ -18,6 +18,6 @@
 
 @property (nonatomic, strong) NSArray <Rule *> *allRule;
 
-@property (nonatomic, strong) City *selectedCity;
+@property (nonatomic, strong) City *firstCity;
 
 @end

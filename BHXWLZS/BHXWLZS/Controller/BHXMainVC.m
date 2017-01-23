@@ -11,6 +11,7 @@
 #import <UICountingLabel.h>
 
 #import "BHXLocationVC.h"
+#import "BHXAddGoodsVC.h"
 
 #import "MTRUnderlineSegmentView.h"
 #import "BHXTableViewCell.h"
@@ -40,6 +41,7 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *editButton;
+@property (nonatomic, strong) UIButton *clearButton;
 
 @property (nonatomic, assign) BOOL editing;
 
@@ -52,30 +54,21 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSArray *familyNames = [UIFont familyNames];
-//    for(NSString *familyName in familyNames)
-//    {
-//        NSLog(@"%@", familyName);
-//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-//        for(NSString *fontName in fontNames)
-//        {
-//            NSLog(@"\t%@", fontName);
-//        }  
-//    }
     [self prepareForConfig];
     [self prepareForUI];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
-- (void)orientChange:(NSNotification *)noti
-{
-   [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
-}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadData];
     [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
     [self.counter startCounter];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -  private method
@@ -83,9 +76,10 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)prepareForConfig
 {
     self.navigationItem.titleView = self.titleLabel;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.editButton];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.editButton];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.clearButton];
     
-    self.tableView.delegate = self;
+    self.tableView.delegate   = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BHXTableViewCell class]) bundle:nil] forCellReuseIdentifier:kGoodsCellIdentifier];
     self.tableView.tableFooterView = [UIView new];
@@ -121,14 +115,38 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 #pragma mark -  event handle
 
+- (void)orientChange:(NSNotification *)noti
+{
+    [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
+}
+
 - (void)editButtonDidClick:(UIButton *)sender
 {
     if ([sender.currentTitle isEqualToString:@"编辑"]) {
         [sender setTitle:@"完成" forState:UIControlStateNormal];
         self.editing = YES;
+        [self clearButtonDidClick:self.clearButton];
+        [self.clearButton setTitle:@"添加" forState:UIControlStateNormal];
     } else {
         [sender setTitle:@"编辑" forState:UIControlStateNormal];
         self.editing = NO;
+        [self.clearButton setTitle:@"清空" forState:UIControlStateNormal];
+    }
+}
+
+- (void)clearButtonDidClick:(UIButton *)sender
+{
+    if ([sender.currentTitle isEqualToString:@"清空"]) {
+        [self.goodsManager.allGoods enumerateObjectsUsingBlock:^(Goods *obj, NSUInteger idx, BOOL *stop) {
+            obj.amount = 0;
+        }];
+        if (!self.editing) {
+            [self.tableView reloadData];
+        }
+        [self.counter startCounter];
+    } else {
+        BHXAddGoodsVC *addGoodsVC = [UIStoryboard storyboardWithName:NSStringFromClass([BHXAddGoodsVC class]) bundle:nil].instantiateInitialViewController;
+        [self presentViewController:addGoodsVC animated:YES completion:nil];
     }
 }
 
@@ -136,52 +154,82 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 2 + (self.goodsManager.allGoods.count > 0 ? 1 : 0);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 1;
+    
+    switch (section) {
+        case  0: return 1;
+        case  1:{
+            if (self.goodsManager.allGoods.count != 0) {
+                return self.goodsManager.allGoods.count;
+            }
+        }
+        case  2: return 1;
+        default: return 0;
     }
-    return self.goodsManager.allGoods.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLocationIdentifier];
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kLocationIdentifier];
-        }
-        cell.textLabel.text = @"地区";
-        cell.textLabel.font = BHXFont;
-        cell.detailTextLabel.text = self.ruleManager.selectedCity.name;
-        cell.detailTextLabel.font = BHXFont;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        return cell;
-    } else {
-        BHXTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:kGoodsCellIdentifier];
-        goodCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        Goods *goods = self.goodsManager.allGoods[indexPath.row];
-        goodCell.nameLabel.text = goods.name;
-        goodCell.inputStepperView.textField.text = [NSString stringWithFormat:@"%zd", goods.amount];
-        [goodCell.inputStepperView setTextFieldChangeBlock:^(NSInteger amount, BOOL quickChange) {
-            if (!quickChange) {
-                self.goodsManager.allGoods[indexPath.row].amount = amount;
-                [self.counter startCounter];
-            } else {
-                NSLog(@"➖%zd", amount);
+    switch (indexPath.section) {
+        case  0:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLocationIdentifier];
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kLocationIdentifier];
             }
-        }];
-        goodCell.inputStepperView.userInteractionEnabled = !self.editing;
-        return goodCell;
+            cell.textLabel.text = @"地区";
+            cell.textLabel.font = BHXFont;
+            cell.detailTextLabel.text = self.counter.userData.selectedCity.name;
+            cell.detailTextLabel.font = BHXFont;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            return cell;
+        }
+        case  1: {
+            if (self.goodsManager.allGoods.count != 0) {
+                BHXTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:kGoodsCellIdentifier];
+                goodCell.selectionStyle = UITableViewCellSelectionStyleNone;
+                Goods *goods = self.goodsManager.allGoods[indexPath.row];
+                goodCell.nameLabel.text = goods.name;
+                __weak typeof(self) weakSelf = self;
+                [goodCell.inputStepperView setTextFieldChangeBlock:^(NSInteger amount, BOOL quickChange) {
+                    if (!quickChange) {
+                        weakSelf.goodsManager.allGoods[indexPath.row].amount = amount;
+                        [weakSelf.counter startCounter];
+                    } else {
+                        NSLog(@"➖%zd", amount);
+                    }
+                }];
+                goodCell.inputStepperView.textField.text = [NSString stringWithFormat:@"%zd", goods.amount];
+                goodCell.inputStepperView.userInteractionEnabled = !self.editing;
+                return goodCell;
+            }
+        }
+        case  2: {
+            BHXTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:kGoodsCellIdentifier];
+            goodCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            goodCell.nameLabel.text = @"包邮";
+            goodCell.inputStepperView.textField.text = [NSString stringWithFormat:@"%zd", self.counter.exempt];
+            [goodCell.inputStepperView setTextFieldChangeBlock:^(NSInteger amount, BOOL quickChange) {
+                if (!quickChange) {
+                    self.counter.exempt = amount;
+                    [self.counter startCounter];
+                } else {
+                    NSLog(@"➖%zd", amount);
+                }
+            }];
+            goodCell.inputStepperView.userInteractionEnabled = !self.editing;
+            return goodCell;
+        };
+        default: return nil;
     }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 || indexPath.section == (self.goodsManager.allGoods.count > 0 ? 2 : 1)) {
         return NO;
     } else {
         return self.editing;
@@ -190,7 +238,7 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 || indexPath.section == (self.goodsManager.allGoods.count > 0 ? 2 : 1)) {
         return NO;
     } else {
         return self.editing;
@@ -199,30 +247,59 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (editingStyle) {
-        case UITableViewCellEditingStyleInsert:
-            
-            break;
-        case UITableViewCellEditingStyleDelete:
-            
-            break;
-        default:
-            break;
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"你确定要删除该商品吗？"
+                                                                       message:@"删除之后无法撤销"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+            Goods *goods = self.goodsManager.allGoods[indexPath.row];
+            [goods MR_deleteEntity];
+            [self.goodsManager.allGoods enumerateObjectsUsingBlock:^(Goods *obj, NSUInteger idx, BOOL *stop) {
+                if (obj.row > goods.row) {
+                    obj.row -= 1;
+                }
+            }];
+            BHXSaveModel;
+            self.goodsManager.allGoods = nil;
+            if (!self.goodsManager.allGoods.count) {
+                [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+            } else {
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            }
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancelAction];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    
+    if (sourceIndexPath.row == destinationIndexPath.row) {
+        return;
+    }
+    Goods *sourceGoods = self.goodsManager.allGoods[sourceIndexPath.row];
+    NSInteger sourceRow = sourceIndexPath.row;
+    NSInteger destinationRow = destinationIndexPath.row;
+    [self.goodsManager.allGoods enumerateObjectsUsingBlock:^(Goods *obj, NSUInteger idx, BOOL *stop) {
+        if (destinationRow > sourceRow) {
+            if (idx > sourceRow && idx <= destinationRow) {
+                obj.row --;
+            }
+        } else {
+            if (idx >= destinationRow && idx < sourceRow) {
+                obj.row ++;
+            }
+        }
+    }];
+    sourceGoods.row = destinationRow;
+    self.goodsManager.allGoods = [self.goodsManager.allGoods sortedArrayUsingComparator:^NSComparisonResult(Goods *obj1, Goods *obj2) {
+        return obj1.row > obj2.row;
+    }];
 }
 
-- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    
-    
-    return @[];
-}
 
 #pragma mark -  UITableView Delegate
 
@@ -235,11 +312,10 @@ static NSString * const kLocationIdentifier  = @"Location";
     }
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete;
+    return @"删除";
 }
-
 #pragma mark -  setter
 
 - (void)setEditing:(BOOL)editing
@@ -307,6 +383,19 @@ static NSString * const kLocationIdentifier  = @"Location";
         [_editButton sizeToFit];
     }
     return _editButton;
+}
+
+- (UIButton *)clearButton
+{
+    if (!_clearButton) {
+        _clearButton = [[UIButton alloc] init];
+        [_clearButton setTitle:@"清空" forState:UIControlStateNormal];
+        [_clearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_clearButton.titleLabel setFont:BHXFont];
+        [_clearButton addTarget:self action:@selector(clearButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_clearButton sizeToFit];
+    }
+    return _clearButton;
 }
 
 @end

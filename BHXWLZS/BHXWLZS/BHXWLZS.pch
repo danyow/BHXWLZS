@@ -9,7 +9,19 @@
 #ifndef BHXWLZS_pch
 #define BHXWLZS_pch
 
+#import <MagicalRecord/MagicalRecord.h>
+
 #define BHXFont             [UIFont fontWithName:@"HelveticaNeue-Light" size:17]
 #define BHXFontSize(SIZE)   [UIFont fontWithName:@"HelveticaNeue-Light" size:SIZE]
+
+#define BHXSaveModel        {\
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {\
+        if (contextDidSave) {\
+            NSLog(@"You successfully saved your context.");\
+        } else if (error) {\
+            NSLog(@"Error saving context: %@", error.description);\
+        }\
+    }];\
+}
 
 #endif /* BHXWLZS_pch */

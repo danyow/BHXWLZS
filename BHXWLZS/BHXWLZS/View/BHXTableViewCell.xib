@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,16 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-h1-ogx">
-                        <rect key="frame" x="15" y="11.5" width="120" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="Ths-ZP-s16"/>
-                        </constraints>
+                        <rect key="frame" x="15" y="11.5" width="137" height="20"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPl-GO-dLX">
-                        <rect key="frame" x="135" y="0.0" width="185" height="43.5"/>
+                        <rect key="frame" x="152" y="0.0" width="168" height="43.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
@@ -36,6 +34,7 @@
                     <constraint firstItem="kPl-GO-dLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Rq-AT-F4O"/>
                     <constraint firstItem="gk1-h1-ogx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DAz-Hb-zO2"/>
                     <constraint firstAttribute="bottom" secondItem="kPl-GO-dLX" secondAttribute="bottom" id="Q2a-te-94G"/>
+                    <constraint firstItem="gk1-h1-ogx" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.382" constant="15" id="VLk-SP-QWF"/>
                     <constraint firstAttribute="trailing" secondItem="kPl-GO-dLX" secondAttribute="trailing" id="ZeV-PZ-Kux"/>
                     <constraint firstItem="gk1-h1-ogx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="pf4-aT-W9P"/>
                 </constraints>
@@ -44,7 +43,7 @@
                 <outlet property="inputHostView" destination="kPl-GO-dLX" id="7bQ-Yc-whF"/>
                 <outlet property="nameLabel" destination="gk1-h1-ogx" id="m94-cH-a6H"/>
             </connections>
-            <point key="canvasLocation" x="-396" y="-133"/>
+            <point key="canvasLocation" x="-520" y="-193"/>
         </tableViewCell>
     </objects>
 </document>

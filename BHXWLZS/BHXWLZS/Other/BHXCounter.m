@@ -25,7 +25,7 @@
     static BHXCounter *instance_ = nil;
     dispatch_once(&onceToken, ^{
         instance_ = [self new];
-        instance_.exempt = 100;
+        instance_.exempt = instance_.userData.exempt;
     });
     return instance_;
 }
@@ -57,7 +57,7 @@
     if (self.amount >= self.exempt || self.weight == 0) {
         self.freight = @0;
     } else {
-        Rule *rule = self.ruleManager.selectedCity.whichRule;
+        Rule *rule = self.userData.selectedCity.whichRule;
         if (self.weight > rule.gradeWeight) {
             self.freight = @(rule.firstPrice.doubleValue);
             self.freight = @(self.freight.doubleValue + ceil((self.weight - rule.firstWeight) / (double)rule.addWeight) * rule.addPrice.doubleValue);
@@ -83,10 +83,17 @@
     
     self.actualPrice = @(self.actualPrice.doubleValue + self.freight.doubleValue);
     self.retailPrice = @(self.retailPrice.doubleValue + self.freight.doubleValue);
-    
     if (self.didCounter) {
         self.didCounter();
     }
+}
+
+#pragma mark -  setter
+
+- (void)setExempt:(NSInteger)exempt
+{
+    _exempt = exempt;
+    self.userData.exempt = exempt;
 }
 
 #pragma mark -  lazy load
@@ -107,5 +114,19 @@
     return _ruleManager;
 }
 
+- (UserData *)userData
+{
+    if (!_userData) {
+        _userData = [UserData MR_findFirst];
+        if (_userData == nil) {
+            _userData = [UserData MR_createEntity];
+            _userData.exempt = 3;
+            _userData.selectedCity = self.ruleManager.firstCity;
+            BHXSaveModel;
+        }
+        _userData = [UserData MR_findFirst];
+    }
+    return _userData;
+}
 
 @end

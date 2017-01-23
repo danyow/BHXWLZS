@@ -10,6 +10,7 @@
 #import "BHXCollectionReusableView.h"
 
 #import "BHXRuleManager.h"
+#import "BHXCounter.h"
 
 #import <Masonry.h>
 
@@ -112,7 +113,7 @@ static NSString * const kLocationIdentifier  = @"Location";
             return ;
         }
     }];
-    self.manager.selectedCity = city;
+    [BHXCounter shareCounter].userData.selectedCity = city;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

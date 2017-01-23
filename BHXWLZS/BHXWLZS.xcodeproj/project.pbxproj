@@ -18,6 +18,8 @@
 		F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4225E111E32F3A00066CE18 /* BHXInputStepperView.m */; };
 		F4225E141E32F3A90066CE18 /* BHXInputStepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */; };
 		F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */; };
+		F44127821E35E6FC00D7501B /* BHXAddGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F44127811E35E6FC00D7501B /* BHXAddGoodsVC.m */; };
+		F44127841E35E70700D7501B /* BHXAddGoodsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44127831E35E70700D7501B /* BHXAddGoodsVC.storyboard */; };
 		F46037921E339E78006C4C1A /* BHXHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */; };
 		F46037961E339E8C006C4C1A /* BHXHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */; };
 		F460379E1E33A1F2006C4C1A /* BHXLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */; };
@@ -52,6 +54,11 @@
 		F4225E131E32F3A90066CE18 /* BHXInputStepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXInputStepperView.xib; sourceTree = "<group>"; };
 		F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodsModel.xcdatamodel; sourceTree = "<group>"; };
 		F441277D1E3597D300D7501B /* BHXWLZS.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHXWLZS.pch; sourceTree = "<group>"; };
+		F441277E1E35AD2B00D7501B /* GoodsModel 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GoodsModel 6.xcdatamodel"; sourceTree = "<group>"; };
+		F441277F1E35C77200D7501B /* GoodsModel 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GoodsModel 7.xcdatamodel"; sourceTree = "<group>"; };
+		F44127801E35E6FC00D7501B /* BHXAddGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXAddGoodsVC.h; sourceTree = "<group>"; };
+		F44127811E35E6FC00D7501B /* BHXAddGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXAddGoodsVC.m; sourceTree = "<group>"; };
+		F44127831E35E70700D7501B /* BHXAddGoodsVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BHXAddGoodsVC.storyboard; sourceTree = "<group>"; };
 		F46037901E339E78006C4C1A /* BHXHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXHeaderFooterView.h; sourceTree = "<group>"; };
 		F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXHeaderFooterView.m; sourceTree = "<group>"; };
 		F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXHeaderFooterView.xib; sourceTree = "<group>"; };
@@ -158,6 +165,9 @@
 				F460379C1E33A1F2006C4C1A /* BHXLocationVC.h */,
 				F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */,
 				F460379F1E33A217006C4C1A /* BHXLocationVC.storyboard */,
+				F44127801E35E6FC00D7501B /* BHXAddGoodsVC.h */,
+				F44127811E35E6FC00D7501B /* BHXAddGoodsVC.m */,
+				F44127831E35E70700D7501B /* BHXAddGoodsVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +289,7 @@
 				F46037A01E33A217006C4C1A /* BHXLocationVC.storyboard in Resources */,
 				F4225E0F1E32F3890066CE18 /* BHXTableViewCell.xib in Resources */,
 				F40DC2851E310A5500DBCE74 /* BHXMainVC.storyboard in Resources */,
+				F44127841E35E70700D7501B /* BHXAddGoodsVC.storyboard in Resources */,
 				F46037961E339E8C006C4C1A /* BHXHeaderFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +359,7 @@
 				F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */,
 				F46CDD3E1E347D5700613C07 /* UIView+DrawAround.m in Sources */,
 				F46CDD3B1E347D2100613C07 /* MTRUnderlineSegmentView.m in Sources */,
+				F44127821E35E6FC00D7501B /* BHXAddGoodsVC.m in Sources */,
 				F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */,
 				F4225E081E32F3400066CE18 /* AppDelegate.m in Sources */,
 				F46CDD311E34437C00613C07 /* BHXCollectionReusableView.m in Sources */,
@@ -528,13 +540,15 @@
 		F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F441277F1E35C77200D7501B /* GoodsModel 7.xcdatamodel */,
+				F441277E1E35AD2B00D7501B /* GoodsModel 6.xcdatamodel */,
 				F46CDD381E344CE500613C07 /* GoodsModel 5.xcdatamodel */,
 				F46CDD371E344B3C00613C07 /* GoodsModel 4.xcdatamodel */,
 				F46CDD331E34466000613C07 /* GoodsModel 3.xcdatamodel */,
 				F4E97D661E332BDA0090F353 /* GoodsModel 2.xcdatamodel */,
 				F4225E161E3302530066CE18 /* GoodsModel.xcdatamodel */,
 			);
-			currentVersion = F46CDD381E344CE500613C07 /* GoodsModel 5.xcdatamodel */;
+			currentVersion = F441277F1E35C77200D7501B /* GoodsModel 7.xcdatamodel */;
 			path = GoodsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
