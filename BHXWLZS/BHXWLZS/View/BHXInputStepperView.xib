@@ -27,7 +27,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0O-p3-xek">
                     <rect key="frame" x="80" y="0.0" width="52.5" height="54"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                     <state key="normal" title="-"/>
                     <connections>
                         <action selector="minusButtonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cQR-QT-9jC"/>
@@ -35,7 +35,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajI-zG-nhU">
                     <rect key="frame" x="132.5" y="0.0" width="53" height="54"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                     <state key="normal" title="+"/>
                     <connections>
                         <action selector="plusButtonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ls1-cV-UJ6"/>
@@ -43,7 +43,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVz-lR-Dgg">
                     <rect key="frame" x="185.5" y="0.0" width="52.5" height="54"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                     <state key="normal" title="×"/>
                     <connections>
                         <action selector="cleanButtonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sn8-Za-o3x"/>

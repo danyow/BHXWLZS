@@ -9,9 +9,9 @@
 #import "BHXGoodsManager.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-NSString *BHXGoodsAPartnerPrice = @"高级伙伴";
-NSString *BHXGoodsBPartnerPrice = @"中级伙伴";
-NSString *BHXGoodsCPartnerPrice = @"初级伙伴";
+NSString *BHXGoodsAPartnerPrice = @"高级合伙人";
+NSString *BHXGoodsBPartnerPrice = @"中级合伙人";
+NSString *BHXGoodsCPartnerPrice = @"初级合伙人";
 NSString *BHXGoodsRetailPrice   = @"零售";
 
 #define MR_SHORTHAND
@@ -89,11 +89,11 @@ NSString *BHXGoodsRetailPrice   = @"零售";
         _allGoods = [Goods MR_findAll];
         if (_allGoods.count == 0) {
             [self createGoods];
-        } else {
-            _allGoods = [_allGoods sortedArrayUsingComparator:^NSComparisonResult(Goods *obj1, Goods *obj2) {
-                return obj1.row > obj2.row;
-            }];
+            _allGoods = [Goods MR_findAll];
         }
+        _allGoods = [_allGoods sortedArrayUsingComparator:^NSComparisonResult(Goods *obj1, Goods *obj2) {
+            return obj1.row > obj2.row;
+        }];
     }
     return _allGoods;
 }
@@ -107,6 +107,14 @@ NSString *BHXGoodsRetailPrice   = @"零售";
                         BHXGoodsRetailPrice];
     }
     return _priceInfos;
+}
+
+- (NSString *)selectedPriceInfo
+{
+    if (!_selectedPriceInfo) {
+        _selectedPriceInfo = self.priceInfos.firstObject;
+    }
+    return _selectedPriceInfo;
 }
 
 @end

@@ -2,7 +2,7 @@
 //  Goods+CoreDataProperties.m
 //  
 //
-//  Created by Danyow.Ed on 2017/1/21.
+//  Created by Danyow.Ed on 2017/1/22.
 //
 //  This file was automatically generated and should not be edited.
 //
@@ -17,8 +17,8 @@
 
 @dynamic amount;
 @dynamic name;
-@dynamic weight;
 @dynamic row;
+@dynamic weight;
 @dynamic prices;
 
 @end

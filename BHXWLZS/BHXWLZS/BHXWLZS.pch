@@ -1,0 +1,15 @@
+//
+//  BHXWLZS.pch
+//  BHXWLZS
+//
+//  Created by Danyow.Ed on 2017/1/23.
+//  Copyright © 2017年 Danyow.Ed. All rights reserved.
+//
+
+#ifndef BHXWLZS_pch
+#define BHXWLZS_pch
+
+#define BHXFont             [UIFont fontWithName:@"HelveticaNeue-Light" size:17]
+#define BHXFontSize(SIZE)   [UIFont fontWithName:@"HelveticaNeue-Light" size:SIZE]
+
+#endif /* BHXWLZS_pch */

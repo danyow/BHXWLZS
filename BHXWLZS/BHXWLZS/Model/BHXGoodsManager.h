@@ -21,6 +21,8 @@ UIKIT_EXTERN NSString *BHXGoodsRetailPrice;
 
 @property (nonatomic, strong) NSArray <NSString *> *priceInfos;
 
+@property (nonatomic, copy  ) NSString *selectedPriceInfo;
+
 + (instancetype)shareManager;
 
 @end

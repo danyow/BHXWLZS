@@ -1,5 +1,6 @@
 target 'BHXWLZS' do
-  pod ‘Masonry’
-  pod ‘MagicalRecord’
-  pod ‘IQKeyboardManager’
+  pod 'Masonry'
+  pod 'MagicalRecord'
+  pod 'IQKeyboardManager'
+  pod 'UICountingLabel'
 end
