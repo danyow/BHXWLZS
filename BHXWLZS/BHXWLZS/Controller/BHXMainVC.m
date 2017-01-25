@@ -45,6 +45,8 @@ static NSString * const kLocationIdentifier  = @"Location";
 
 @property (nonatomic, assign) BOOL editing;
 
+@property (nonatomic, assign) BOOL canUser;
+
 @end
 
 @implementation BHXMainVC
@@ -54,13 +56,40 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.canUser) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"请输入笨浣熊小助手使用码！"
+                                                                       message:@"获取使用码请联系笨浣熊！"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+           
+        }];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            if ([alert.textFields.firstObject.text isEqualToString:@"bhx2016"]) {
+                self.canUser = YES;
+                [self prepareForConfig];
+                [self prepareForUI];
+                [self.tableView reloadData];
+                [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
+                [self.counter startCounter];
+            } else {
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
     [self prepareForConfig];
     [self prepareForUI];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (!self.canUser) {
+        return;
+    }
     [self.tableView reloadData];
     [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
     [self.counter startCounter];
@@ -103,6 +132,8 @@ static NSString * const kLocationIdentifier  = @"Location";
         self.goodsManager.selectedPriceInfo = self.goodsManager.priceInfos[selectedIndex];
         [self.counter startCounter];
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)prepareForUI
@@ -398,4 +429,17 @@ static NSString * const kLocationIdentifier  = @"Location";
     return _clearButton;
 }
 
+@synthesize canUser = _canUser;
+
+- (void)setCanUser:(BOOL)canUser
+{
+    [[NSUserDefaults standardUserDefaults] setBool:canUser forKey:@"CANUSER"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+- (BOOL)canUser
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"CANUSER"];
+}
 @end
