@@ -56,31 +56,31 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.canUser) {
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"请输入笨浣熊小助手使用码！"
-                                                                       message:@"获取使用码请联系笨浣熊！"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-           
-        }];
-        
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            if ([alert.textFields.firstObject.text isEqualToString:@"bhx2016"]) {
-                self.canUser = YES;
-                [self prepareForConfig];
-                [self prepareForUI];
-                [self.tableView reloadData];
-                [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
-                [self.counter startCounter];
-            } else {
-                [self presentViewController:alert animated:YES completion:nil];
-            }
-        }];
-        
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
+//    if (!self.canUser) {
+//        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"请输入笨浣熊小助手使用码！"
+//                                                                       message:@"获取使用码请联系笨浣熊！"
+//                                                                preferredStyle:UIAlertControllerStyleAlert];
+//        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+//           
+//        }];
+//        
+//        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+//            if ([alert.textFields.firstObject.text isEqualToString:@"bhx2016"]) {
+//                self.canUser = YES;
+//                [self prepareForConfig];
+//                [self prepareForUI];
+//                [self.tableView reloadData];
+//                [self.segmentView setUnderlineEdge:UIEdgeInsetsMake(2, 0, 0, 0)];
+//                [self.counter startCounter];
+//            } else {
+//                [self presentViewController:alert animated:YES completion:nil];
+//            }
+//        }];
+//        
+//        [alert addAction:defaultAction];
+//        [self presentViewController:alert animated:YES completion:nil];
+//        return;
+//    }
     [self prepareForConfig];
     [self prepareForUI];
 }
