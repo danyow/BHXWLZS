@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		668E7E0E121736384E96A1C6 /* libPods-BHXWLZS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */; };
+		F409A4A81EA49CA300DF1F3A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F409A4A71EA49CA300DF1F3A /* StoreKit.framework */; };
 		F40DC2851E310A5500DBCE74 /* BHXMainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2831E310A5500DBCE74 /* BHXMainVC.storyboard */; };
 		F40DC2871E310A5500DBCE74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2861E310A5500DBCE74 /* Assets.xcassets */; };
 		F40DC28A1E310A5500DBCE74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BHXWLZS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B884E1B0EC5F75736524665 /* Pods-BHXWLZS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.release.xcconfig"; sourceTree = "<group>"; };
 		A758D0607C56C0B996F9A7B5 /* Pods-BHXWLZS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHXWLZS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHXWLZS/Pods-BHXWLZS.debug.xcconfig"; sourceTree = "<group>"; };
+		F409A4A71EA49CA300DF1F3A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F40DC2771E310A5500DBCE74 /* BHXWLZS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHXWLZS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40DC2841E310A5500DBCE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BHXMainVC.storyboard; sourceTree = "<group>"; };
 		F40DC2861E310A5500DBCE74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				668E7E0E121736384E96A1C6 /* libPods-BHXWLZS.a in Frameworks */,
+				F409A4A81EA49CA300DF1F3A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +104,7 @@
 		A03134F287A00B70331DD439 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F409A4A71EA49CA300DF1F3A /* StoreKit.framework */,
 				4F3B0D83A2153FE6CC513920 /* libPods-BHXWLZS.a */,
 			);
 			name = Frameworks;
@@ -256,6 +260,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 72GJ4BTB4F;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -485,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: JunHong Zhu (285AA3RCX7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 72GJ4BTB4F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BHXWLZS/BHXWLZS.pch";
 				INFOPLIST_FILE = BHXWLZS/Info.plist;
@@ -503,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunHong Zhu (72GJ4BTB4F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 72GJ4BTB4F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BHXWLZS/BHXWLZS.pch";
 				INFOPLIST_FILE = BHXWLZS/Info.plist;

@@ -22,10 +22,12 @@
 
 #import "UIView+DrawAround.h"
 
+#import <StoreKit/StoreKit.h>
+
 static NSString * const kGoodsCellIdentifier = @"GoodsCell";
 static NSString * const kLocationIdentifier  = @"Location";
 
-@interface BHXMainVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface BHXMainVC ()<UITableViewDataSource, UITableViewDelegate, SKStoreProductViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet MTRUnderlineSegmentView *segmentView;
@@ -42,6 +44,7 @@ static NSString * const kLocationIdentifier  = @"Location";
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *editButton;
 @property (nonatomic, strong) UIButton *clearButton;
+@property (nonatomic, strong) UIButton *testButton;
 
 @property (nonatomic, assign) BOOL editing;
 
@@ -106,7 +109,9 @@ static NSString * const kLocationIdentifier  = @"Location";
 {
     self.navigationItem.titleView = self.titleLabel;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.editButton];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.clearButton];
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.clearButton];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.testButton],
+                                                [[UIBarButtonItem alloc] initWithCustomView:self.clearButton]];
     
     self.tableView.delegate   = self;
     self.tableView.dataSource = self;
@@ -180,6 +185,41 @@ static NSString * const kLocationIdentifier  = @"Location";
         [self presentViewController:addGoodsVC animated:YES completion:nil];
     }
 }
+
+- (void)testButtonDidClick:(UIButton *)sender
+{
+    NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+    if ([systemVersion compare:@"10.3"] != NSOrderedAscending) {
+        [SKStoreReviewController requestReview];
+    } else {
+        NSString *appid = @"1179212713";
+        NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@&pageNumber=0&sortOrdering=2&mt=8", appid]];
+        if ([[UIApplication sharedApplication] canOpenURL:URL]) {
+            if ([systemVersion compare:@"10"] != NSOrderedAscending) {
+                [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:^(BOOL success) {
+                    
+                }];
+            } else {
+                [[UIApplication sharedApplication] openURL:URL];
+                // 应用内评价 但是只能看到详情页
+                if (/* DISABLES CODE */ (NO)) {
+                    SKStoreProductViewController *storeProductVC = [[SKStoreProductViewController alloc] init];
+                    storeProductVC.delegate = self;
+                    [storeProductVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier : appid } completionBlock:^(BOOL result, NSError *error) {
+                        if (result) {
+                            [self presentViewController:storeProductVC animated:YES completion:^{
+                                
+                            }];
+                        }else{
+                            NSLog(@"错误：%@" ,error);
+                        }
+                    }];
+                }
+            }
+        }
+    }
+}
+
 
 #pragma mark -  UITableView DataSource
 
@@ -347,6 +387,15 @@ static NSString * const kLocationIdentifier  = @"Location";
 {
     return @"删除";
 }
+
+#pragma mark -  SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+    NSLog(@"%s", __FUNCTION__);
+    [viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -  setter
 
 - (void)setEditing:(BOOL)editing
@@ -427,6 +476,19 @@ static NSString * const kLocationIdentifier  = @"Location";
         [_clearButton sizeToFit];
     }
     return _clearButton;
+}
+
+- (UIButton *)testButton
+{
+    if (!_testButton) {
+        _testButton = [[UIButton alloc] init];
+        [_testButton setTitle:@"评分" forState:UIControlStateNormal];
+        [_testButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_testButton.titleLabel setFont:BHXFont];
+        [_testButton addTarget:self action:@selector(testButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_testButton sizeToFit];
+    }
+    return _testButton;
 }
 
 @synthesize canUser = _canUser;
