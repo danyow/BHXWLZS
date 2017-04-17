@@ -193,7 +193,7 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)testButtonDidClick:(UIButton *)sender
 {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-    if ([systemVersion compare:@"10.3"] == NSOrderedAscending) {
+    if ([systemVersion compare:@"10.3"] != NSOrderedAscending) {
         [SKStoreReviewController requestReview];
     } else {
         NSString *appid = @"1179212713";
