@@ -21,6 +21,8 @@
 		F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4225E151E3302530066CE18 /* GoodsModel.xcdatamodeld */; };
 		F44127821E35E6FC00D7501B /* BHXAddGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F44127811E35E6FC00D7501B /* BHXAddGoodsVC.m */; };
 		F44127841E35E70700D7501B /* BHXAddGoodsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44127831E35E70700D7501B /* BHXAddGoodsVC.storyboard */; };
+		F44B66421EC56D860098BC47 /* UIResponder+Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = F44B66411EC56D860098BC47 /* UIResponder+Monitor.m */; };
+		F44B66451EC56FD80098BC47 /* UIView+Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = F44B66441EC56FD80098BC47 /* UIView+Monitor.m */; };
 		F46037921E339E78006C4C1A /* BHXHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */; };
 		F46037961E339E8C006C4C1A /* BHXHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */; };
 		F460379E1E33A1F2006C4C1A /* BHXLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F460379D1E33A1F2006C4C1A /* BHXLocationVC.m */; };
@@ -61,6 +63,10 @@
 		F44127801E35E6FC00D7501B /* BHXAddGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXAddGoodsVC.h; sourceTree = "<group>"; };
 		F44127811E35E6FC00D7501B /* BHXAddGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXAddGoodsVC.m; sourceTree = "<group>"; };
 		F44127831E35E70700D7501B /* BHXAddGoodsVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BHXAddGoodsVC.storyboard; sourceTree = "<group>"; };
+		F44B66401EC56D860098BC47 /* UIResponder+Monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Monitor.h"; sourceTree = "<group>"; };
+		F44B66411EC56D860098BC47 /* UIResponder+Monitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Monitor.m"; sourceTree = "<group>"; };
+		F44B66431EC56FD80098BC47 /* UIView+Monitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Monitor.h"; sourceTree = "<group>"; };
+		F44B66441EC56FD80098BC47 /* UIView+Monitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Monitor.m"; sourceTree = "<group>"; };
 		F46037901E339E78006C4C1A /* BHXHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHXHeaderFooterView.h; sourceTree = "<group>"; };
 		F46037911E339E78006C4C1A /* BHXHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHXHeaderFooterView.m; sourceTree = "<group>"; };
 		F46037951E339E8C006C4C1A /* BHXHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHXHeaderFooterView.xib; sourceTree = "<group>"; };
@@ -198,6 +204,10 @@
 				F46CDD3C1E347D5700613C07 /* UIView+DrawAround.h */,
 				F46CDD3D1E347D5700613C07 /* UIView+DrawAround.m */,
 				F40DC2881E310A5500DBCE74 /* LaunchScreen.storyboard */,
+				F44B66401EC56D860098BC47 /* UIResponder+Monitor.h */,
+				F44B66411EC56D860098BC47 /* UIResponder+Monitor.m */,
+				F44B66431EC56FD80098BC47 /* UIView+Monitor.h */,
+				F44B66441EC56FD80098BC47 /* UIView+Monitor.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -361,12 +371,14 @@
 				F46CDD361E344A6E00613C07 /* BHXRuleManager.m in Sources */,
 				F46CDD411E34823D00613C07 /* BHXCounter.m in Sources */,
 				F4225E171E3302530066CE18 /* GoodsModel.xcdatamodeld in Sources */,
+				F44B66421EC56D860098BC47 /* UIResponder+Monitor.m in Sources */,
 				F4225DF31E32F31C0066CE18 /* main.m in Sources */,
 				F4225E0E1E32F3890066CE18 /* BHXTableViewCell.m in Sources */,
 				F460379E1E33A1F2006C4C1A /* BHXLocationVC.m in Sources */,
 				F46037A31E33A283006C4C1A /* BHXMainVC.m in Sources */,
 				F4E97D651E330B1A0090F353 /* BHXGoodsManager.m in Sources */,
 				F46CDD3E1E347D5700613C07 /* UIView+DrawAround.m in Sources */,
+				F44B66451EC56FD80098BC47 /* UIView+Monitor.m in Sources */,
 				F46CDD3B1E347D2100613C07 /* MTRUnderlineSegmentView.m in Sources */,
 				F44127821E35E6FC00D7501B /* BHXAddGoodsVC.m in Sources */,
 				F4225E121E32F3A00066CE18 /* BHXInputStepperView.m in Sources */,

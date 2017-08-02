@@ -87,6 +87,18 @@ static NSString * const kLocationIdentifier  = @"Location";
             return;
         }
     }
+    /** 赚享客 */
+    if (!self.canUser) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"官方客服微信"
+                                                                       message:@"526597840"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
     [self prepareForConfig];
     [self prepareForUI];
@@ -193,16 +205,20 @@ static NSString * const kLocationIdentifier  = @"Location";
 - (void)testButtonDidClick:(UIButton *)sender
 {
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-    if ([systemVersion compare:@"10.3"] != NSOrderedAscending) {
+    if ([systemVersion compare:@"10.3"] != NSOrderedAscending && /* DISABLES CODE */ (NO)) {
         [SKStoreReviewController requestReview];
     } else {
         NSString *appid = @"1179212713";
         NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@&pageNumber=0&sortOrdering=2&mt=8", appid]];
         if ([[UIApplication sharedApplication] canOpenURL:URL]) {
             if ([systemVersion compare:@"10"] != NSOrderedAscending) {
-                [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:^(BOOL success) {
-                    
-                }];
+                
+                NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@?action=write-review", appid];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+                
+//                [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:^(BOOL success) {
+//                    
+//                }];
             } else {
                 [[UIApplication sharedApplication] openURL:URL];
                 // 应用内评价 但是只能看到详情页
